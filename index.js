@@ -1,7 +1,10 @@
-const myButton = document.querySelector("button");
+const myButtons = document.getElementsByClassName("drum");
 
-myButton.addEventListener('click', handleClick);
+for (const myButton of myButtons) {
+    myButton.addEventListener('click', playAudio);
+}
 
-function handleClick() {
-    alert("I got Clicked");
+function playAudio() {
+    const audio = new Audio('./sounds/crash.mp3');
+    audio.play();
 }
