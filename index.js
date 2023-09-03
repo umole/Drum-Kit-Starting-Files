@@ -8,7 +8,12 @@ function playAudio() {
     // const audio = new Audio('./sounds/crash.mp3');
     // audio.play();
 
-    switch (this.innerHTML) {
+    const buttonInnerHtml = this.innerHTML;
+    makeSound(buttonInnerHtml)
+}
+
+function makeSound(key) {
+    switch (key) {
         case 'w':
             const audio1 = new Audio('./sounds/crash.mp3');
             audio1.play();
@@ -42,3 +47,7 @@ function playAudio() {
             break;
     }
 }
+
+document.addEventListener('keydown', function (e) {
+    makeSound(e.key);
+});
